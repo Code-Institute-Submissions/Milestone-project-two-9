@@ -8,6 +8,11 @@
     margin-top: 40px;
 }
 
+.header-link{
+    text-decoration: none;
+    color: #000000;
+}
+
 .header-text{
     font-size: 300%;
 }
