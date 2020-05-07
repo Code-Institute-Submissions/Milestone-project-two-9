@@ -60,10 +60,22 @@
 }
 
 footer{
+    display: flex;
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
     padding: 0 10px;
     background-color: #95DCD8;
+}
+
+.footer-icons{
+    position: fixed;
+    right:0px;
+    padding: 15px 10px 5px 0px;
+}
+
+.social-icons{
+    margin-left: 10px;
+    margin-right: 10px;
 }
