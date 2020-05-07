@@ -37,8 +37,13 @@
     text-align: center;
 }
 
+.level-links{
+    text-decoration: none;
+}
+
 .level-select-text{
     margin: 0 0;
+    color: #000000;
 }
 
 .tutorial{
