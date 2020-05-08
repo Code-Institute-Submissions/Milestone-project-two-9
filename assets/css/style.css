@@ -125,6 +125,14 @@ footer{
     margin: 0 0;
 }
 
+.reveal-box{
+    background-color: #95DCD8;
+    margin-top: 20px;
+    height: 60px;
+    width: 60px;
+    padding: 12px 0 0 12px;
+}
+
 .card-section{
     width:50%;
 }
