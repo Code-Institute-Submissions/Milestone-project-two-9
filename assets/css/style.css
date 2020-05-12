@@ -115,6 +115,7 @@ footer{
 
 /*------------------------------------------EASY.HTML-----------------------------------------*/
 
+/*--LEFT-HAND SIDE--*/
 .game-section{
     width: 100%;
     display: flex;
@@ -134,25 +135,28 @@ footer{
     border-radius: 100px;
     width: 140px;
 }
+
 .level-dropdown-text{
     margin: 0 0;
     font-family: 'Patua One', cursive;
     font-weight: 500;
 }
 
-.reveal-box{
-    background-color: #95DCD8;
-    margin-top: 20px;
-    height: 60px;
-    width: 60px;
-    padding: 12px 0 0 12px;
-    border-radius: 100px;
-}
-
+/*--CARD SECTION--*/
 .card-section{
     width:50%;
+    display: flex;
+    justify-content: center;
 }
 
+.card-box{
+    display: flex;
+    width: 100px;
+    height: 60px;
+    background-color: #0000ff;
+}
+
+/*--RIGHT-HAND SIDE--*/
 .click-box{
     width: 25%;
 }
@@ -164,8 +168,19 @@ footer{
     border-radius: 100px;
     background-color: #95DCD8;
 }
+
 .click-counter-text{
     margin: 0 0;
     font-family: 'Patua One', cursive;
     font-weight: 500;
+}
+
+/*------------------------------------------EASY.HTML-----------------------------------------*/
+.reveal-box{
+    background-color: #95DCD8;
+    margin-top: 20px;
+    height: 60px;
+    width: 60px;
+    padding: 12px 0 0 12px;
+    border-radius: 100px;
 }
