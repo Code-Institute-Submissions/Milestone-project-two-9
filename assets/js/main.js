@@ -5,16 +5,18 @@ const cardSuit = ["hearts", "spades", "clubs", "diamonds"];
 function cards(){
 
     //gets a random value from cardValue
-    let j = Math.floor(Math.random(0,12));
+    let j = Math.floor(Math.random()*(13 - 0)) + 0;
     let cardName = cardValue[j];
 
     //gets a random value from cardSuit
-    let i = Math.floor(Math.random(0,3));
+    let i = Math.floor(Math.random()*(3 - 0)) + 0;
     let cardType = cardSuit[i];
 
     //inputs cardValue as the card number
-    document.getElementById("number-text").innerHTML = `${cardName}`;
+    let cNumb = document.getElementsByClassName("number-text");
+    cNumb[0].innerHTML = `${cardName}`;
 
     //uses cardSuit value for image src
-    document.getElementById("card-suit").innerHTML = `<img class="card-image" src="assets/images/${cardType}.svg.png" alt="Club"/>`;
+    cSuit = document.getElementsByClassName("card-suit");
+    cSuit[0].innerHTML = `<img class="card-image" src="assets/images/${cardType}.svg.png" alt="${cardType}"/>`;
 }
