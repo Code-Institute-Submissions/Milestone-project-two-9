@@ -151,9 +151,26 @@ footer{
 
 .card-box{
     display: flex;
-    width: 100px;
-    height: 60px;
-    background-color: #0000ff;
+    width: 65px;
+    height: 45px;
+    background-color: #8282ff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+.card-number{
+    margin-right: 5px;
+}
+
+.number-text{
+    margin: 0 0;
+    font-size: 200%;
+}
+
+.card-image{
+    width: 40px;
+    height: 40px;
 }
 
 /*--RIGHT-HAND SIDE--*/
