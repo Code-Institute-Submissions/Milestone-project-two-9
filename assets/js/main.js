@@ -1,3 +1,4 @@
+
 const cardValue =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 
 const cardSuit = ["hearts", "spades", "clubs", "diamonds"];
@@ -24,3 +25,12 @@ function cards(){
     cSuit = document.getElementsByClassName("card-suit");
     cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${cardType}.svg.png" alt="${cardType}"/>`;
 }}
+
+$(document).ready(function () {
+    function cardSwitch(){
+        $("card-back").click(function(){
+            $(this).removeClass("card-back");
+            $(this).css("opacity", "1");
+        });
+    }
+});
