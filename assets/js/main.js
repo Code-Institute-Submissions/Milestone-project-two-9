@@ -4,6 +4,10 @@ const cardSuit = ["hearts", "spades", "clubs", "diamonds"];
 
 function cards(){
 
+    let x;
+
+    for (x = 0; x < 99; x++){ //to iterate through each element with the selected classes
+
     //gets a random value from cardValue
     let j = Math.floor(Math.random()*(13 - 0)) + 0;
     let cardName = cardValue[j];
@@ -14,9 +18,9 @@ function cards(){
 
     //inputs cardValue as the card number
     let cNumb = document.getElementsByClassName("number-text");
-    cNumb[0].innerHTML = `${cardName}`;
+    cNumb[x].innerHTML = `${cardName}`;
 
     //uses cardSuit value for image src
     cSuit = document.getElementsByClassName("card-suit");
-    cSuit[0].innerHTML = `<img class="card-image" src="assets/images/${cardType}.svg.png" alt="${cardType}"/>`;
-}
+    cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${cardType}.svg.png" alt="${cardType}"/>`;
+}}
