@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://kit.fontawesome.com/318689fbdb.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/jquery-3.5.0.js"></script>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -30,7 +28,7 @@
         <!--CARD SECTION-->
         <div class="card-section">
             <div class="card-switch">
-                <div class="card-front" onclick="cardSwitch()">
+                <div class="card-front">
                     <div class="card-number">
                         <h2 class="number-text"></h2>
                     </div>
@@ -69,14 +67,8 @@
     </footer>
 
     <!--SCRIPTS-->
+    <script src="https://kit.fontawesome.com/318689fbdb.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.5.0.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-    function cardSwitch(){
-        $("card-back").click(function(){
-            $(this).removeClass("card-back");
-            $(this).css("opacity", "1");
-        });
-    };
-    </script>
 </body>
 </html>
