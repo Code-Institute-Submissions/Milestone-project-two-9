@@ -6,7 +6,7 @@ function cards(){
 
     let x;
 
-    for (x = 0; x < 13; x++){ //to iterate through each element with the selected classes
+    for (x = 0; x < 99; x++){ //to iterate through each element with the selected classes
 
     //gets a random value from cardValue
     let j = Math.floor(Math.random()*(13 - 0)) + 0;
@@ -23,10 +23,16 @@ function cards(){
     //uses cardSuit value for image src
     cSuit = document.getElementsByClassName("card-suit");
     cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${cardType}.svg.png" alt="${cardType}"/>`;
+        
+    
+     if ($(".card-back").is(":hidden"));
+        {
+            $(".card-back").show();
+        }
 }}
 
 $(document).ready(function () {
     $(".card-back").click(function(){
-        $(this).remove();
+        $(this).hide();
     });
 });
