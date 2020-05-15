@@ -34,5 +34,6 @@ function cards(){
 $(document).ready(function () {
     $(".card-back").click(function(){
         $(this).hide();
+        console.log(this);
     });
 });
