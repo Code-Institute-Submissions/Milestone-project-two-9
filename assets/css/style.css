@@ -145,23 +145,25 @@ footer{
 /*--CARD SECTION--*/
 .card-section{
     width:50%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
-.card-switch{
-    display:flex;
-    width: 115px;
-    height: 50px;
+
+.card-grid{
+    display:inline-grid;
+    grid-template-columns: 4fr;
 }
+
 .card-front{
     display: flex;
-    height: 100%;
+    height: 40px;
+    width: 90px;
     background-color: #8282ff;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #000000;
-    opacity: 0;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    align-self: center;
+    justify-self: center;
 }
 
 .card-number{
@@ -183,12 +185,16 @@ footer{
 }
 
 .card-back{
-    height: 100%;
-    width: 110px;
+    height: 40px;
+    width: 90px;
+    padding: 10px;
+    border: 2px solid #000000;
     border-radius: 10px;
     background-color: #000000;
-    opacity: 1;
-    margin-left: -100%;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    align-self: center;
+    justify-self: center;
 }
 
 .card-back-text{

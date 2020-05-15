@@ -6,7 +6,7 @@ function cards(){
 
     let x;
 
-    for (x = 0; x < 2; x++){ //to iterate through each element with the selected classes
+    for (x = 0; x < 13; x++){ //to iterate through each element with the selected classes
 
     //gets a random value from cardValue
     let j = Math.floor(Math.random()*(13 - 0)) + 0;
@@ -27,7 +27,6 @@ function cards(){
 
 $(document).ready(function () {
     $(".card-back").click(function(){
-        $(this).removeClass("card-back");
-        $(this).prev().css({"opacity": "1"});
+        $(this).remove();
     });
 });
