@@ -24,11 +24,6 @@ function cards(){
     cSuit = document.getElementsByClassName("card-suit");
     cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${cardType}.svg.png" alt="${cardType}"/>`;
         
-    
-     if ($(".card-back").is(":hidden"));
-        {
-            $(".card-back").show();
-        }
 }}
 
 $(document).ready(function () {
@@ -36,3 +31,17 @@ $(document).ready(function () {
         $(this).hide();
     });
 });
+
+function cardExtractor(){
+    let x;
+
+    for (x = 0; x < 16; x++){ //to iterate through each element with the selected classes
+
+        let j = Math.floor((Math.random()*13) + 0);
+        let i = Math.floor((Math.random()*3) + 0);
+        let orderedCards = [];
+        cardFinal = `"${cardValue[j] + " of " + cardSuit[i]}", "${cardValue[j] + " of " + cardSuit[i]}"`
+        orderedCards.push(cardFinal);
+        console.log(orderedCards)
+    }
+}
