@@ -42,6 +42,30 @@ function cardExtractor(){
         let orderedCards = [];
         cardFinal = `"${cardValue[j] + " of " + cardSuit[i]}", "${cardValue[j] + " of " + cardSuit[i]}"`
         orderedCards.push(cardFinal);
-        console.log(orderedCards)
+        return (orderedCards)
     }
 }
+
+// ______TESTS______ //
+// console.log(cardFinal)
+// console.log(orderedCards)
+// ______TESTS______ //
+
+function cardShuffler(){
+
+    let cardShuffling = [];
+
+    while (cardShuffling.length < 31){
+        let orderNumber = Math.floor((Math.random()*31) + 0);
+        let numberCheck = cardShuffling.includes(orderNumber);
+        if(numberCheck === false){
+            cardShuffling.push(orderNumber)
+        } 
+    }
+    
+}
+
+// ______TESTS______ //
+// console.log(numberCheck)
+// console.log(cardShuffling)
+// ______TESTS______ //
