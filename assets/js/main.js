@@ -33,17 +33,15 @@ $(document).ready(function () {
 });
 
 function cardExtractor(){
-    let x;
-
-    for (x = 0; x < 16; x++){ //to iterate through each element with the selected classes
+    let orderedCards = [];
+    while (orderedCards.length < 16){ //to iterate through each element with the selected classes
 
         let j = Math.floor((Math.random()*13) + 0);
         let i = Math.floor((Math.random()*3) + 0);
-        let orderedCards = [];
-        cardFinal = `"${cardValue[j] + " of " + cardSuit[i]}", "${cardValue[j] + " of " + cardSuit[i]}"`
-        orderedCards.push(cardFinal);
-        return (orderedCards)
-    }
+        cardFinal = [cardValue[j], cardSuit[i]] 
+        orderedCards.push(cardFinal, cardFinal);
+
+    }return orderedCards
 }
 
 // ______TESTS______ //
@@ -58,10 +56,13 @@ function cardShuffler(){
     while (cardShuffling.length < 31){
         let orderNumber = Math.floor((Math.random()*31) + 0);
         let numberCheck = cardShuffling.includes(orderNumber);
+
         if(numberCheck === false){
             cardShuffling.push(orderNumber)
-        } 
-    }
+            cardShuffling.push(orderNumber)
+            console.log(cardShuffling)
+        }
+    } return cardShuffling
     
 }
 
