@@ -88,9 +88,9 @@ function shuffle() {
         cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${orderedCards[i][1]}.svg.png" alt="${orderedCards[i][1]}"/>`; 
         let cData = document.getElementsByClassName("card-grid");
         cData[x].setAttribute("data-framework", orderedCards[i][0]+orderedCards[i][1]);   
-        $(".card-grid").children("div.card-back").show();    
-    }
+            
+    }$(".card-grid").children("div.card-back").show();
+    cards.forEach(card => card.addEventListener('click', flipCard));
 };
 
 
-cards.forEach(card => card.addEventListener('click', flipCard));
