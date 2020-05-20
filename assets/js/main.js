@@ -1,45 +1,48 @@
 
 const cardValue =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
-
 const cardSuit = ["hearts", "spades", "clubs", "diamonds"];
-
+let clicks = 90;
 const cards = document.querySelectorAll('.card-grid');
-
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
+document.getElementById("clicker").innerHTML = clicks;
 function flipCard() {
-  if (lockBoard) return;
-  if (this === firstCard) return;
+    clicks -= 1;
+    document.getElementById("clicker").innerHTML = clicks;
+    if (lockBoard) return;
+    if (this === firstCard) return;
 
-  $(this).children("div.card-back").hide();
+    $(this).children("div.card-back").hide();
 
-  if (!hasFlippedCard) {
-    // first click
-    hasFlippedCard = true;
-    firstCard = this;
+    if (!hasFlippedCard) {
+        // first click
+        hasFlippedCard = true;
+        firstCard = this;
 
-    return;
-  }
-
-  // second click
-  secondCard = this;
-
-  checkForMatch();
+        return;
+    }
+    
+    // second click
+    secondCard = this;
+    checkForMatch(); 
 }
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
   isMatch ? disableCards() : unflipCards();
+
+ 
 }
 
 function disableCards() {
-  firstCard.removeEventListener('click', flipCard);
-  secondCard.removeEventListener('click', flipCard);
-
-  resetBoard();
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    firstCard.classList.add("matched");
+    secondCard.classList.add("matched");
+    resetBoard();
 }
 
 function unflipCards() {
@@ -87,10 +90,8 @@ function shuffle() {
         let cSuit = document.getElementsByClassName("card-suit");
         cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${orderedCards[i][1]}.svg.png" alt="${orderedCards[i][1]}"/>`; 
         let cData = document.getElementsByClassName("card-grid");
-        cData[x].setAttribute("data-framework", orderedCards[i][0]+orderedCards[i][1]);   
-            
-    }$(".card-grid").children("div.card-back").show();
+        cData[x].setAttribute("data-framework", orderedCards[i][0]+orderedCards[i][1]);       
+    }
+    $(".card-grid").children("div.card-back").show();
     cards.forEach(card => card.addEventListener('click', flipCard));
 };
-
-
