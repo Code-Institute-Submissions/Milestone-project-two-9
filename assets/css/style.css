@@ -147,20 +147,10 @@ footer{
     width:60%;
 }
 
-.card-grid:active {
-  transform: scale(0.97);
-  transition: transform .2s;
-}
-
-.card-grid.flip {
-  transform: rotateY(180deg);
-}
-
 .card-grid{
     display:inline-grid;
     grid-template-columns: 3fr;
     margin-bottom: 10px;
-    align-self: center;
 }
 
 .card-front{
@@ -176,7 +166,6 @@ footer{
     align-self: center;
     justify-self: center;
 }
-
 .card-number{
     width: 40px;
     margin-right: 5px;
@@ -195,6 +184,7 @@ footer{
     padding-top: 5px;
 }
 
+
 .card-back{
     height: 40px;
     width: 85px;
@@ -207,8 +197,6 @@ footer{
     align-self: center;
     justify-self: center;
     text-align: center;
-    backface-visibility: hidden;
-
 }
 
 .card-back-text{
@@ -218,8 +206,8 @@ footer{
 
 .card-grid-button{
     display:grid;
-    
 }
+
 /*--RIGHT-HAND SIDE--*/
 .click-box{
     width: 20%;

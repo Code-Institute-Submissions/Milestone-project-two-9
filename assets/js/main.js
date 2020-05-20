@@ -13,7 +13,7 @@ function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
 
-  this.classList.add('flip');
+  $(this).children("div.card-back").hide();
 
   if (!hasFlippedCard) {
     // first click
@@ -46,11 +46,11 @@ function unflipCards() {
   lockBoard = true;
 
   setTimeout(() => {
-    firstCard.classList.remove('flip');
-    secondCard.classList.remove('flip');
+    $(firstCard).children("div.card-back").show();
+    $(secondCard).children("div.card-back").show();
 
     resetBoard();
-  }, 1500);
+  }, 800);
 }
 
 function resetBoard() {
@@ -88,7 +88,7 @@ function shuffle() {
         cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${orderedCards[i][1]}.svg.png" alt="${orderedCards[i][1]}"/>`; 
         let cData = document.getElementsByClassName("card-grid");
         cData[x].setAttribute("data-framework", orderedCards[i][0]+orderedCards[i][1]);   
-        console.log(cData[x])     
+        $(".card-grid").children("div.card-back").show();    
     }
 };
 
