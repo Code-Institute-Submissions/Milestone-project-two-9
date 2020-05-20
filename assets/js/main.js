@@ -6,6 +6,7 @@ const cards = document.querySelectorAll('.card-grid');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let winCon = 0;
 
 document.getElementById("clicker").innerHTML = clicks;
 function flipCard() {
@@ -27,6 +28,10 @@ function flipCard() {
     // second click
     secondCard = this;
     checkForMatch(); 
+    
+    if (winCon === 16){
+        alert("Well done, you've won");
+    }
 }
 
 function checkForMatch() {
@@ -42,6 +47,8 @@ function disableCards() {
     secondCard.removeEventListener('click', flipCard);
     firstCard.classList.add("matched");
     secondCard.classList.add("matched");
+    winCon += 1;
+    console.log(winCon);
     resetBoard();
 }
 
