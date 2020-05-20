@@ -1,10 +1,65 @@
+
 const cardValue =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 
 const cardSuit = ["hearts", "spades", "clubs", "diamonds"];
 
-function cards(){
+const cards = document.querySelectorAll('.card-grid');
 
-    //Creates a multidimensional array filled with a two of each combined value of cardValue and cardSuit
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+  if (lockBoard) return;
+  if (this === firstCard) return;
+
+  this.classList.add('flip');
+
+  if (!hasFlippedCard) {
+    // first click
+    hasFlippedCard = true;
+    firstCard = this;
+
+    return;
+  }
+
+  // second click
+  secondCard = this;
+
+  checkForMatch();
+}
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
+
+  resetBoard();
+}
+
+function unflipCards() {
+  lockBoard = true;
+
+  setTimeout(() => {
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
+
+    resetBoard();
+  }, 1500);
+}
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+function shuffle() {
+      //Creates a multidimensional array filled with a two of each combined value of cardValue and cardSuit
     let orderedCards = [];
     while (orderedCards.length < 32){ 
         let j = Math.floor((Math.random()*13) + 0);
@@ -29,16 +84,13 @@ function cards(){
         let i = cardShuffling[x];
         let cNumb = document.getElementsByClassName("number-text");
         cNumb[x].innerHTML = `${orderedCards[i][0]}`;
-        cSuit = document.getElementsByClassName("card-suit");
-        cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${orderedCards[i][1]}.svg.png" alt="${orderedCards[i][1]}"/>`;
-            
-}}
-
-$(document).ready(function () {
-    $(".card-back").click(function(){
-        $(this).hide();
-    });
-});
+        let cSuit = document.getElementsByClassName("card-suit");
+        cSuit[x].innerHTML = `<img class="card-image" src="assets/images/${orderedCards[i][1]}.svg.png" alt="${orderedCards[i][1]}"/>`; 
+        let cData = document.getElementsByClassName("card-grid");
+        cData[x].setAttribute("data-framework", orderedCards[i][0]+orderedCards[i][1]);   
+        console.log(cData[x])     
+    }
+};
 
 
-    
+cards.forEach(card => card.addEventListener('click', flipCard));

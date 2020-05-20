@@ -147,6 +147,15 @@ footer{
     width:60%;
 }
 
+.card-grid:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.card-grid.flip {
+  transform: rotateY(180deg);
+}
+
 .card-grid{
     display:inline-grid;
     grid-template-columns: 3fr;
@@ -198,6 +207,8 @@ footer{
     align-self: center;
     justify-self: center;
     text-align: center;
+    backface-visibility: hidden;
+
 }
 
 .card-back-text{

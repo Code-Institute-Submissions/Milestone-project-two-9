@@ -9,7 +9,7 @@ describe("randomiser", function(){
         // arrange
         let indexnum = 2;
         // act
-        const result = cards(indexnum);
+        const result = spareCards(indexnum);
         //assert
         expect(result).toBe(2);
     });
@@ -20,7 +20,7 @@ describe("randomiser", function(){
         let i = Math.floor(Math.random(1,9));
         let indexnum = isFinite(i)
         // act
-        const result = cards(indexnum);
+        const result = spareCards(indexnum);
         //assert
         expect(result).toBe(true);
     });
@@ -31,7 +31,7 @@ describe("randomiser", function(){
         let cardname = cardValue[2];
         let indexnum = cardname;
         // act
-        const result = cards(indexnum);
+        const result = spareCards(indexnum);
         //assert
         expect(result).toBe("3");
     });
@@ -43,7 +43,7 @@ describe("randomiser", function(){
         let cardname = cardValue[i];
         let indexnum = isNaN(cardname);
         // act
-        const result = cards(indexnum);
+        const result = spareCards(indexnum);
         //assert
         expect(result).toBe(true);
     });
@@ -54,7 +54,7 @@ describe("randomiser", function(){
         let cardname = cardSuit[0];
         let indexnum = cardname;
         // act
-        const result = cards(indexnum);
+        const result = spareCards(indexnum);
         //assert
         expect(result).toBe("Hearts");
     });
@@ -66,7 +66,7 @@ describe("randomiser", function(){
         let cardname = cardSuit[i];
         let indexnum = isNaN(cardname);
         // act
-        const result = cards(indexnum);
+        const result = spareCards(indexnum);
         //assert
         expect(result).toBe(true);
     });
@@ -78,7 +78,7 @@ describe("randomiser", function(){
         let cardname = cardValue[0];
         let indexnum = cardname + "of"+ cardType;
         // act
-        const result = cards(indexnum);
+        const result = spareCards(indexnum);
         //assert
         expect(result).toBe("AofHearts");
     });
@@ -94,9 +94,8 @@ describe("randomiser", function(){
 
         let indexnum = isNaN (cardname + "of"+ cardType);
         // act
-        const result = cards(indexnum);
+        const result = spareCards(indexnum);
         //assert
         expect(result).toBe(true);
     });
 });
-

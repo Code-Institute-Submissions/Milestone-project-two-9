@@ -1,3 +1,3 @@
-function cards(indexnum){
+function spareCards(indexnum){
     return indexnum;
 }
