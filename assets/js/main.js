@@ -32,6 +32,10 @@ function flipCard() {
     if (winCon === 16){
         alert("Well done, you've won");
     }
+
+    if (clicks === 0 && winCon != 16){
+        alert("Oh no, you've lost");
+    }
 }
 
 function checkForMatch() {
@@ -73,7 +77,7 @@ function shuffle() {
     let orderedCards = [];
     while (orderedCards.length < 32){ 
         let j = Math.floor((Math.random()*13) + 0);
-        let i = Math.floor((Math.random()*3) + 0);
+        let i = Math.floor((Math.random()*4) + 0);
         cardFinal = [cardValue[j], cardSuit[i]] 
         orderedCards.push(cardFinal, cardFinal);  
     }
@@ -101,4 +105,5 @@ function shuffle() {
     }
     $(".card-grid").children("div.card-back").show();
     cards.forEach(card => card.addEventListener('click', flipCard));
+    let clicks = 90;
 };
