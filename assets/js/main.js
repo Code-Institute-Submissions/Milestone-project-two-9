@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', function() {
+    shuffle();
+});
 
 const cardValue =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 const cardSuit = ["hearts", "spades", "clubs", "diamonds"];
@@ -8,25 +11,26 @@ let lockBoard = false;
 let firstCard, secondCard;
 let winCon = 0;
 
-document.getElementById("clicker").innerHTML = clicks;
 function flipCard() {
     clicks -= 1;
     document.getElementById("clicker").innerHTML = clicks;
+    
     if (lockBoard) return;
     if (this === firstCard) return;
-
+    
     $(this).children("div.card-back").hide();
-
+    
     if (!hasFlippedCard) {
         // first click
         hasFlippedCard = true;
         firstCard = this;
-
+        
         return;
     }
     
     // second click
     secondCard = this;
+    clicks -= 1;
     checkForMatch(); 
     
     if (winCon === 16){
@@ -49,10 +53,7 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    firstCard.classList.add("matched");
-    secondCard.classList.add("matched");
     winCon += 1;
-    console.log(winCon);
     resetBoard();
 }
 
@@ -75,6 +76,7 @@ function resetBoard() {
 function shuffle() {
       //Creates a multidimensional array filled with a two of each combined value of cardValue and cardSuit
     let orderedCards = [];
+    
     while (orderedCards.length < 32){ 
         let j = Math.floor((Math.random()*13) + 0);
         let i = Math.floor((Math.random()*4) + 0);
@@ -105,5 +107,7 @@ function shuffle() {
     }
     $(".card-grid").children("div.card-back").show();
     cards.forEach(card => card.addEventListener('click', flipCard));
-    let clicks = 90;
+    clicks = 90;
+    winCon = 0;
+    document.getElementById("clicker").innerHTML = clicks;
 };
