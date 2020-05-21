@@ -33,11 +33,11 @@ function flipCard() {
     clicks -= 1;
     checkForMatch(); 
     
-    if (winCon === 16){
+    if (winCon === 14){
         alert("Well done, you've won");
     }
 
-    if (clicks === 0 && winCon != 16){
+    if (clicks === 0 && winCon != 14){
         alert("Oh no, you've lost");
     }
 }
@@ -77,7 +77,7 @@ function shuffle() {
       //Creates a multidimensional array filled with a two of each combined value of cardValue and cardSuit
     let orderedCards = [];
     
-    while (orderedCards.length < 32){ 
+    while (orderedCards.length < 28){ 
         let j = Math.floor((Math.random()*13) + 0);
         let i = Math.floor((Math.random()*4) + 0);
         cardFinal = [cardValue[j], cardSuit[i]] 
@@ -86,8 +86,8 @@ function shuffle() {
 
     //Creates an array of unordered numbers to be used as index numbers for orderedCards array
     let cardShuffling = [];
-    while (cardShuffling.length < 32){
-        let orderNumber = Math.floor((Math.random()*32) + 0);
+    while (cardShuffling.length < 28){
+        let orderNumber = Math.floor((Math.random()*28) + 0);
         let numberCheck = cardShuffling.includes(orderNumber);
         if(numberCheck === false){
             cardShuffling.push(orderNumber)
@@ -96,7 +96,7 @@ function shuffle() {
 
     //inputs a value of a complete playing card to the HTML 
     let x;
-    for (x = 0; x < 32; x++){
+    for (x = 0; x < 28; x++){
         let i = cardShuffling[x];
         let cNumb = document.getElementsByClassName("number-text");
         cNumb[x].innerHTML = `${orderedCards[i][0]}`;

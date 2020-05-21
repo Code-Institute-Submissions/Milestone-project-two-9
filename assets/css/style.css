@@ -113,35 +113,34 @@ footer{
     margin-right: 10px;
 }
 
-/*------------------------------------------EASY.HTML-----------------------------------------*/
+/*------------------------------------------PLAY.HTML-----------------------------------------*/
 
 /*--LEFT-HAND SIDE--*/
 .game-section{
     width: 100%;
     display: flex;
-    justify-content: center;
 }
 
-.game-side{
+.click-box{
     position: relative;
     float: left;
     width: 20%;
     margin-left: 10px;
 }
 
-.level-dropdown{
-    background-color: #95DCD8;
-    padding: 7px 0 7px 14px;
+.click-counter{
+    position: relative;
+    width: 150px;
+    padding: 7px 14px;
     border-radius: 100px;
-    width: 140px;
+    background-color: #95DCD8;
 }
 
-.level-dropdown-text{
+.click-counter-text{
     margin: 0 0;
     font-family: 'Patua One', cursive;
     font-weight: 500;
 }
-
 /*--CARD SECTION--*/
 #card-section{
     width:60%;
@@ -149,7 +148,6 @@ footer{
 
 .card-grid{
     display:inline-grid;
-    grid-template-columns: 3fr;
     margin-bottom: 10px;
 }
 
@@ -204,35 +202,70 @@ footer{
     margin: 0 0;
 }
 
-.card-grid-button{
-    display:grid;
-}
-
-/*--RIGHT-HAND SIDE--*/
-.click-box{
-    width: 20%;
-}
-
-.click-counter{
+.shuffle-box{
     position: relative;
-    float:right;
-    padding: 7px 14px;
-    border-radius: 100px;
-    background-color: #95DCD8;
+    width: 20%
 }
 
-.click-counter-text{
-    margin: 0 0;
+.shuffle-button{
+    width: 60%;
+    margin: 0 20%;
+}
+button{
+    position: relative;
+    width: 140px;
+    background-color: #95DCD8;
     font-family: 'Patua One', cursive;
     font-weight: 500;
+    font-size: 120%;
+    margin-left: 10px;
+    border: 1px solid #000000;
+    border-radius: 100px;
 }
 
-/*------------------------------------------EASY.HTML-----------------------------------------*/
-.reveal-box{
-    background-color: #95DCD8;
-    margin-top: 20px;
-    height: 60px;
-    width: 60px;
-    padding: 12px 0 0 12px;
-    border-radius: 100px;
+/*------------------------------------------MEDIA QUERY-----------------------------------------*/
+@media only screen and (max-width: 1024px){
+
+.footer-text{
+    margin-right: 5px;
+}
+.footer-span{
+    display: none;
+}
+
+.footer-icons{
+    right: 5px;
+}
+
+.social-icons{
+    margin-right: 0;
+}
+/*------------------------PLAY.HTML----------------------------*/
+.game-section{
+    display: block;
+    margin-bottom: 100px;
+}
+
+.click-box{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#card-section{
+    width: 100%;
+    margin: 0 10px;
+}
+
+.shuffle-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.shuffle-button{
+    display: flex;
+    justify-content: center;
+}
 }
