@@ -25,6 +25,8 @@ body{
 .header-text{
     font-size: 300%;
     font-family: 'Patua One', cursive;
+    color: #ce4343;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 /*--INTRO--*/
@@ -55,6 +57,7 @@ body{
     height: 20px;
     width: 200px;
     text-align: center;
+    border: 2px solid #000000;
 }
 
 .level-links{
@@ -70,7 +73,7 @@ body{
 
 /*--TUTORIAL--*/
 .tutorial{
-    margin-top: 120px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
 }
@@ -80,8 +83,9 @@ body{
     padding: 5px 0 10px;
     border-radius: 100px;
     height: 20px;
-    width: 180px;
+    width: 200px;
     text-align: center;
+    border: 2px solid #000000;
 }
 
 .tutorial-text{
@@ -123,17 +127,19 @@ footer{
 
 .click-box{
     position: relative;
-    float: left;
-    width: 20%;
-    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    max-height: 40px;
+    width: 18%;
 }
 
 .click-counter{
     position: relative;
-    width: 150px;
+    width: 140px;
     padding: 7px 14px;
     border-radius: 100px;
     background-color: #95DCD8;
+    border: 2px solid #000000;
 }
 
 .click-counter-text{
@@ -143,9 +149,11 @@ footer{
 }
 /*--CARD SECTION--*/
 #card-section{
-    width:60%;
+    width:62%;
+    padding: 0 30px;
+    border-left: 5px solid #000000;
+    border-right: 5px solid #000000;
 }
-
 .card-grid{
     display:inline-grid;
     margin-bottom: 10px;
@@ -155,7 +163,7 @@ footer{
     display: flex;
     height: 40px;
     width: 85px;
-    background-color: #8282ff;
+    background-color: #f9ff3f;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #000000;
@@ -189,7 +197,7 @@ footer{
     padding: 15px 10px 5px;
     border: 2px solid #000000;
     border-radius: 10px;
-    background-color: #000000;
+    background-color: #300d35;
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
     align-self: center;
@@ -204,26 +212,28 @@ footer{
 
 .shuffle-box{
     position: relative;
-    width: 20%
+    width: 18%
 }
 
 .shuffle-button{
-    width: 60%;
+    width: 70%;
     margin: 0 20%;
+    display:flex;
 }
 button{
     position: relative;
     width: 140px;
+    height: 40px;
     background-color: #95DCD8;
     font-family: 'Patua One', cursive;
     font-weight: 500;
     font-size: 120%;
     margin-left: 10px;
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     border-radius: 100px;
 }
 
-/*------------------------------------------MEDIA QUERY-----------------------------------------*/
+/*------------------------------------------PHONE MEDIA QUERY-----------------------------------------*/
 @media only screen and (max-width: 1024px){
 
 .footer-text{
@@ -248,14 +258,16 @@ button{
 
 .click-box{
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
 }
 
 #card-section{
     width: 100%;
-    margin: 0 10px;
+    margin: 0 2% 20px;
+    padding: 0;
+    border: none;
 }
 
 .shuffle-box{
@@ -269,3 +281,4 @@ button{
     justify-content: center;
 }
 }
+
