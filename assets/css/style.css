@@ -1,11 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Patua+One:500, 600, 700');
+@import url('https://fonts.googleapis.com/css?family=Patua+One:400, 500, 600, 700');
 
 body{
     background-color: #FBFADD;
+    font-family: 'Patua One', cursive;
 }
 
-/*------------------------------------------INDEX.HTML-----------------------------------------*/
+h3{
+    font-weight: 500;
+    margin: 0 0;
+    color: #000000;
+}
 
+.blue-box{
+    background-color: #95DCD8;
+    padding: 5px 0 10px;
+    border-radius: 100px;
+    height: 20px;
+    width: 200px;
+    text-align: center;
+    border: 2px solid #000000;
+}
+/*------------------------------------------INDEX.HTML-----------------------------------------*/
 /*--HEADER--*/
 .header{
     width: 100%;
@@ -19,79 +34,41 @@ body{
 
 .header-link{
     text-decoration: none;
-    color: #000000;
 }
 
 .header-text{
     font-size: 300%;
-    font-family: 'Patua One', cursive;
     color: #ce4343;
     text-shadow: 2px 2px 2px #000000;
 }
 
 /*--INTRO--*/
-.intro{
+#intro{
     width: 100%;
     text-align: center;
 }
 
-.intro-text{
+#intro-text{
     font-size: 150%;
-    font-family: 'Patua One', cursive;
-    font-weight: 500;
+    
 }
 
 /*--LEVEL SELECT--*/
-.level-select{
+#level-select{
     margin-top: 80px;
     display: flex;
     justify-content: center;
-}
-
-.level-select-box{
-    background-color: #95DCD8;
-    padding: 5px 0 10px;
-    margin-right: 50px;
-    margin-left: 50px;
-    border-radius: 100px;
-    height: 20px;
-    width: 200px;
-    text-align: center;
-    border: 2px solid #000000;
 }
 
 .level-links{
     text-decoration: none;
 }
 
-.level-select-text{
-    margin: 0 0;
-    color: #000000;
-    font-family: 'Patua One', cursive;
-    font-weight: 500;
-}
-
 /*--TUTORIAL--*/
-.tutorial{
+#tutorial{
     margin-top: 60px;
     display: flex;
     justify-content: center;
-}
-
-.tutorial-box{
-    background-color: #95DCD8;
-    padding: 5px 0 10px;
-    border-radius: 100px;
-    height: 20px;
-    width: 200px;
-    text-align: center;
-    border: 2px solid #000000;
-}
-
-.tutorial-text{
-    margin: 0 0;
-    font-family: 'Patua One', cursive;
-    font-weight: 500;
 }
 
 /*--FOOTER--*/
@@ -103,7 +80,6 @@ footer{
     left: 0;
     padding: 0 10px;
     background-color: #95DCD8;
-    font-family: 'Patua One', cursive;
 }
 
 .footer-icons{
@@ -120,12 +96,12 @@ footer{
 /*------------------------------------------PLAY.HTML-----------------------------------------*/
 
 /*--LEFT-HAND SIDE--*/
-.game-section{
+#game-section{
     width: 100%;
     display: flex;
 }
 
-.click-box{
+#click-box{
     position: relative;
     display: flex;
     justify-content: center;
@@ -133,7 +109,7 @@ footer{
     width: 18%;
 }
 
-.click-counter{
+#click-counter{
     position: relative;
     width: 140px;
     padding: 7px 14px;
@@ -142,11 +118,6 @@ footer{
     border: 2px solid #000000;
 }
 
-.click-counter-text{
-    margin: 0 0;
-    font-family: 'Patua One', cursive;
-    font-weight: 500;
-}
 /*--CARD SECTION--*/
 #card-section{
     width:62%;
@@ -159,18 +130,21 @@ footer{
     margin-bottom: 10px;
 }
 
-.card-front{
-    display: flex;
-    height: 40px;
-    width: 85px;
-    background-color: #f9ff3f;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #000000;
+.card{
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
     align-self: center;
     justify-self: center;
+    text-align: center;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    height: 40px;
+    width: 85px;
+}
+.card-front{
+    display: flex;
+    background-color: #f9ff3f;
+    padding: 10px;
 }
 .card-number{
     width: 40px;
@@ -190,19 +164,9 @@ footer{
     padding-top: 5px;
 }
 
-
 .card-back{
-    height: 40px;
-    width: 85px;
     padding: 15px 10px 5px;
-    border: 2px solid #000000;
-    border-radius: 10px;
     background-color: #300d35;
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-    align-self: center;
-    justify-self: center;
-    text-align: center;
 }
 
 .card-back-text{
@@ -210,12 +174,12 @@ footer{
     margin: 0 0;
 }
 
-.shuffle-box{
+#shuffle-box{
     position: relative;
     width: 18%
 }
 
-.shuffle-button{
+#shuffle-button{
     width: 70%;
     margin: 0 20%;
     display:flex;
@@ -224,10 +188,9 @@ button{
     position: relative;
     width: 140px;
     height: 40px;
-    background-color: #95DCD8;
-    font-family: 'Patua One', cursive;
-    font-weight: 500;
+    background-color: #95DCD8;;
     font-size: 120%;
+    font-weight: 600;
     margin-left: 10px;
     border: 2px solid #000000;
     border-radius: 100px;
@@ -251,12 +214,12 @@ button{
     margin-right: 0;
 }
 /*------------------------PLAY.HTML----------------------------*/
-.game-section{
+#game-section{
     display: block;
     margin-bottom: 100px;
 }
 
-.click-box{
+#click-box{
     width: 100%;
     margin-bottom: 30px;
     display: flex;
@@ -270,13 +233,13 @@ button{
     border: none;
 }
 
-.shuffle-box{
+#shuffle-box{
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.shuffle-button{
+#shuffle-button{
     display: flex;
     justify-content: center;
 }
