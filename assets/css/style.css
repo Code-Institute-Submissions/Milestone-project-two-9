@@ -99,6 +99,7 @@ footer{
 #game-section{
     width: 100%;
     display: flex;
+    justify-content: center;
 }
 
 #click-box{
@@ -106,7 +107,7 @@ footer{
     display: flex;
     justify-content: center;
     max-height: 40px;
-    width: 18%;
+    width: 20%;
 }
 
 #click-counter{
@@ -120,8 +121,9 @@ footer{
 
 /*--CARD SECTION--*/
 #card-section{
-    width:62%;
-    padding: 0 30px;
+    width: 55%;
+    margin-left: 50px;
+    padding: 0 20px 0 40px;
     border-left: 5px solid #000000;
     border-right: 5px solid #000000;
 }
@@ -166,17 +168,35 @@ footer{
 
 .card-back{
     padding: 15px 10px 5px;
-    background-color: #300d35;
+    background-color: #de9fe8;
 }
 
 .card-back-text{
-    color: #ffffff;
+    color: #ce4343;
+    text-shadow: 1px 1px 1px #000000;
     margin: 0 0;
 }
+/*----------------------WIN SCREEN-----------------------*/
+#win-screen{
+    display: none;
+    width: 55%;
+    margin-left: 50px;
+    padding: 0 20px 0 40px;
+    border-left: 5px solid #000000;
+    border-right: 5px solid #000000;
+    justify-content: center;
+}
 
+#win-box{
+    width: 50%;
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: center;
+}
+/*----------------------SHUFFLE BUTTON-----------------------*/
 #shuffle-box{
     position: relative;
-    width: 18%
+    width: 20%
 }
 
 #shuffle-button{

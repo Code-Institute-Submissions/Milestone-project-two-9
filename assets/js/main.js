@@ -23,8 +23,7 @@ function flipCard() {
     if (!hasFlippedCard) {
         // first click
         hasFlippedCard = true;
-        firstCard = this;
-        
+        firstCard = this;   
         return;
     }
     
@@ -34,20 +33,21 @@ function flipCard() {
     checkForMatch(); 
     
     if (winCon === 14){
-        alert("Well done, you've won");
+        toggleCardSection();
+        shuffle();
+        return
     }
 
-    if (clicks === 0 && winCon != 14){
+    if (clicks === 0){
         alert("Oh no, you've lost");
+        shuffle();
+        return
     }
 }
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-
   isMatch ? disableCards() : unflipCards();
-
- 
 }
 
 function disableCards() {
@@ -71,6 +71,17 @@ function unflipCards() {
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
+}
+
+function toggleCardSection(){
+    $("#card-section").css("display", "none");
+    $("#win-screen").css("display", "flex")
+}
+
+function playAgain(){
+    $("#win-screen").css("display", "none")
+    $("#card-section").css("display", "");
+    shuffle();
 }
 
 function shuffle() {
