@@ -121,11 +121,8 @@ footer{
 
 /*--CARD SECTION--*/
 #card-section{
-    width: 55%;
-    margin-left: 50px;
-    padding: 0 20px 0 40px;
-    border-left: 5px solid #000000;
-    border-right: 5px solid #000000;
+    width: 60%;
+    padding: 0 20px 0 95px;
 }
 .card-grid{
     display:inline-grid;
@@ -179,31 +176,33 @@ footer{
 /*----------------------WIN SCREEN-----------------------*/
 #win-screen{
     display: none;
-    width: 55%;
-    margin-left: 50px;
+    width: 60%;
     padding: 0 20px 0 40px;
-    border-left: 5px solid #000000;
-    border-right: 5px solid #000000;
     justify-content: center;
 }
 
 #win-box{
     width: 50%;
-    border: 2px solid #000000;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px 0;
+    background-color: #6a65fd;
+    box-shadow: 2px 2px 2px #000000;
+}
+#win-text-box, 
+#play-again-box{
     display: flex;
+    width:100%;
+    margin-bottom: 10px;
     justify-content: center;
 }
-/*----------------------SHUFFLE BUTTON-----------------------*/
-#shuffle-box{
-    position: relative;
-    width: 20%
+
+#win-text{
+    font-size: 300%;
+    margin: 20px 0;
+    color: #eab029;
 }
 
-#shuffle-button{
-    width: 70%;
-    margin: 0 20%;
-    display:flex;
-}
 button{
     position: relative;
     width: 140px;
@@ -211,9 +210,22 @@ button{
     background-color: #95DCD8;;
     font-size: 120%;
     font-weight: 600;
-    margin-left: 10px;
     border: 2px solid #000000;
     border-radius: 100px;
+}
+/*----------------------SHUFFLE BUTTON-----------------------*/
+#shuffle-box{
+    position: relative;
+    width: 20%
+}
+
+#shuffle-button-box{
+    width: 70%;
+    margin: 0 20%;
+    display:flex;
+}
+#shuffle-button{
+    margin-left: 10px;
 }
 
 /*------------------------------------------PHONE MEDIA QUERY-----------------------------------------*/

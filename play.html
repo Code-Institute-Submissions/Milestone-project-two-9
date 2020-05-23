@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Card Catch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -365,16 +366,20 @@
             </div>
         </div>
         <div id="win-screen">
-            <div id="win-box">
-                <h2>You've Won</h2>
-                <button type="button" onclick="playAgain()">Play Again!</button>
+            <div id="win-box" class="animate__animated animate__zoomInUp">
+                <div id="win-text-box">
+                    <h2 id="win-text">You Won!</h2>
+                </div>
+                <div id="play-again-box">
+                    <button type="button" id="play-again" onclick="playAgain()">Play Again!</button>
+                </div>
             </div>
         </div>
             
         <!--END OF CARD SECTION-->
         <div id="shuffle-box">
-            <div  id="shuffle-button">
-                <button type="button" onclick="shuffle()">Shuffle</button>
+            <div  id="shuffle-button-box">
+                <button id="shuffle-button" type="button" onclick="shuffle()">Shuffle</button>
             </div>
         </div>
     </div>

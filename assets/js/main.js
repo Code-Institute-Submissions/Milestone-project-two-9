@@ -34,7 +34,6 @@ function flipCard() {
     
     if (winCon === 14){
         toggleCardSection();
-        shuffle();
         return
     }
 
