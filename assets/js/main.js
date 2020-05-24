@@ -12,10 +12,11 @@ let firstCard, secondCard;
 let winCon = 0;
 
 function flipCard() {
-    clicks -= 1;
-    document.getElementById("clicker").innerHTML = clicks;
+    
     
     if (lockBoard) return;
+    clicks -= 1;
+    document.getElementById("clicker").innerHTML = clicks;
     if (this === firstCard) return;
     
     $(this).children("div.card-back").hide();
@@ -29,17 +30,16 @@ function flipCard() {
     
     // second click
     secondCard = this;
-    clicks -= 1;
-    checkForMatch(); 
+    checkForMatch();
+    
     
     if (winCon === 14){
         showWinScreen();
         return
     }
 
-    if (clicks === 0){
-        alert("Oh no, you've lost");
-        shuffle();
+    if (clicks == -1){
+        showLossScreen();
         return
     }
 }
@@ -78,12 +78,21 @@ function showWinScreen(){
     setTimeout(() => {
     $("#card-section").css("display", "none");
     $("#win-screen").css("display", "flex")
-    },1000);
+    },800);
+}
+
+function showLossScreen(){
+    $("#card-section").addClass("animate__animated animate__zoomOutDown");
+    setTimeout(() => {
+    $("#card-section").css("display", "none");
+    $("#loss-screen").css("display", "flex")
+    },800);
 }
 
 function playAgain(){
     $("#card-section").removeClass("animate__animated animate__zoomOutDown");
     $("#win-screen").css("display", "none")
+    $("#loss-screen").css("display", "none")
     $("#card-section").css("display", "");
     shuffle();
 }

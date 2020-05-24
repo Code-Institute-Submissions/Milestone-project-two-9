@@ -30,6 +30,7 @@ h3{
 
 .header-box{
     margin-top: 40px;
+    text-decoration: none
 }
 
 .header-link{
@@ -174,14 +175,15 @@ footer{
     margin: 0 0;
 }
 /*----------------------WIN SCREEN-----------------------*/
-#win-screen{
+#win-screen,
+#loss-screen{
     display: none;
     width: 60%;
     padding: 0 20px 0 40px;
     justify-content: center;
 }
 
-#win-box{
+.result-box{
     width: 50%;
     border: 1px solid #000000;
     border-radius: 10px;
@@ -189,15 +191,15 @@ footer{
     background-color: #6a65fd;
     box-shadow: 2px 2px 2px #000000;
 }
-#win-text-box, 
-#play-again-box{
+.result-text-box, 
+.play-again-box{
     display: flex;
     width:100%;
     margin-bottom: 10px;
     justify-content: center;
 }
 
-#win-text{
+.result-text{
     font-size: 300%;
     margin: 20px 0;
     color: #eab029;

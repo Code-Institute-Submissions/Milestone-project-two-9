@@ -366,12 +366,22 @@
             </div>
         </div>
         <div id="win-screen">
-            <div id="win-box" class="animate__animated animate__zoomInUp">
-                <div id="win-text-box">
-                    <h2 id="win-text">You Won!</h2>
+            <div class="result-box animate__animated animate__zoomInUp">
+                <div class="result-text-box">
+                    <h2 class="result-text">You Won!</h2>
                 </div>
                 <div id="play-again-box">
                     <button type="button" id="play-again" onclick="playAgain()">Play Again!</button>
+                </div>
+            </div>
+        </div>
+        <div id="loss-screen">
+            <div class="result-box animate__animated animate__slideInDown animate_slower">
+                <div class="result-text-box">
+                    <h2 class="result-text">You Lost!</h2>
+                </div>
+                <div class="play-again-box">
+                    <button type="button" class="play-again" onclick="playAgain()">Play Again!</button>
                 </div>
             </div>
         </div>
