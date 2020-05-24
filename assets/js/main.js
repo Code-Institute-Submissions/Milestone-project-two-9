@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const cardValue =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 const cardSuit = ["hearts", "spades", "clubs", "diamonds"];
-let clicks = 90;
+let clicks = 100;
 const cards = document.querySelectorAll('.card-grid');
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -33,7 +33,7 @@ function flipCard() {
     checkForMatch(); 
     
     if (winCon === 14){
-        toggleCardSection();
+        showWinScreen();
         return
     }
 
@@ -72,12 +72,17 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-function toggleCardSection(){
+function showWinScreen(){
+    
+    $("#card-section").addClass("animate__animated animate__zoomOutDown");
+    setTimeout(() => {
     $("#card-section").css("display", "none");
     $("#win-screen").css("display", "flex")
+    },1000);
 }
 
 function playAgain(){
+    $("#card-section").removeClass("animate__animated animate__zoomOutDown");
     $("#win-screen").css("display", "none")
     $("#card-section").css("display", "");
     shuffle();
@@ -117,7 +122,7 @@ function shuffle() {
     }
     $(".card-grid").children("div.card-back").show();
     cards.forEach(card => card.addEventListener('click', flipCard));
-    clicks = 90;
+    clicks = 100;
     winCon = 0;
     document.getElementById("clicker").innerHTML = clicks;
 };
