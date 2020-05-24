@@ -2,74 +2,74 @@ document.addEventListener('DOMContentLoaded', function() {
     shuffle();
 });
 
-const cardValue =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
-const cardSuit = ["hearts", "spades", "clubs", "diamonds"];
-let clicks = 100;
+const CARD_VALUE =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+const CARD_SUIT = ["hearts", "spades", "clubs", "diamonds"];
+let clickCounter = 100;
 const cards = document.querySelectorAll('.card-grid');
-let hasFlippedCard = false;
-let lockBoard = false;
-let firstCard, secondCard;
-let winCon = 0;
+let isCardFlipped = false;
+let boardLocked = false;
+let firstFlip, secondFlip;
+let winCondition = 0;
 
 function flipCard() {
     
     
-    if (lockBoard) return;
-    clicks -= 1;
-    document.getElementById("clicker").innerHTML = clicks;
-    if (this === firstCard) return;
+    if (boardLocked) return;
+    clickCounter -= 1;
+    document.getElementById("clicker").innerHTML = clickCounter;
+    if (this === firstFlip) return;
     
     $(this).children("div.card-back").hide();
     
-    if (!hasFlippedCard) {
+    if (!isCardFlipped) {
         // first click
-        hasFlippedCard = true;
-        firstCard = this;   
+        isCardFlipped = true;
+        firstFlip = this;   
         return;
     }
     
     // second click
-    secondCard = this;
+    secondFlip = this;
     checkForMatch();
     
     
-    if (winCon === 14){
+    if (winCondition === 14){
         showWinScreen();
         return
     }
 
-    if (clicks == -1){
+    if (clickCounter == -1){
         showLossScreen();
         return
     }
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  let isMatch = firstFlip.dataset.framework === secondFlip.dataset.framework;
   isMatch ? disableCards() : unflipCards();
 }
 
 function disableCards() {
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
-    winCon += 1;
+    firstFlip.removeEventListener('click', flipCard);
+    secondFlip.removeEventListener('click', flipCard);
+    winCondition += 1;
     resetBoard();
 }
 
 function unflipCards() {
-  lockBoard = true;
+  boardLocked = true;
 
   setTimeout(() => {
-    $(firstCard).children("div.card-back").show();
-    $(secondCard).children("div.card-back").show();
+    $(firstFlip).children("div.card-back").show();
+    $(secondFlip).children("div.card-back").show();
 
     resetBoard();
   }, 800);
 }
 
 function resetBoard() {
-  [hasFlippedCard, lockBoard] = [false, false];
-  [firstCard, secondCard] = [null, null];
+  [isCardFlipped, boardLocked] = [false, false];
+  [firstFlip, secondFlip] = [null, null];
 }
 
 function showWinScreen(){
@@ -78,7 +78,7 @@ function showWinScreen(){
     setTimeout(() => {
     $("#card-section").css("display", "none");
     $("#win-screen").css("display", "flex")
-    },800);
+    },500);
 }
 
 function showLossScreen(){
@@ -104,7 +104,7 @@ function shuffle() {
     while (orderedCards.length < 28){ 
         let j = Math.floor((Math.random()*13) + 0);
         let i = Math.floor((Math.random()*4) + 0);
-        cardFinal = [cardValue[j], cardSuit[i]] 
+        cardFinal = [CARD_VALUE[j], CARD_SUIT[i]] 
         orderedCards.push(cardFinal, cardFinal);  
     }
 
@@ -131,7 +131,7 @@ function shuffle() {
     }
     $(".card-grid").children("div.card-back").show();
     cards.forEach(card => card.addEventListener('click', flipCard));
-    clicks = 100;
-    winCon = 0;
+    clickCounter = 100;
+    winCondition = 0;
     document.getElementById("clicker").innerHTML = clicks;
 };
