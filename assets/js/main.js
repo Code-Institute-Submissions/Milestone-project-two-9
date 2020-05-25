@@ -84,7 +84,7 @@ function showLossScreen(){
 
 function playAgain(){
     $("#card-section").removeClass("animate__animated animate__zoomOutDown");
-    $("#card-section").addClass("animate__animated animate__flipInX");
+    $("#card-section").addClass("animate__animated animate__fadeIn");
     $("#loss-screen").addClass("animate__animated animate__flipOutX");
     $("#win-screen").addClass("animate__animated animate__flipOutX");
     setTimeout(() => {
