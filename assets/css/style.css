@@ -117,7 +117,7 @@ footer{
     margin-bottom: 45px;
 }
 
-#click-box{
+.click-box{
     position: relative;
     display: flex;
     justify-content: center;
@@ -125,13 +125,21 @@ footer{
     width: 20%;
 }
 
-#click-counter{
+.click-counter{
     position: relative;
     width: 150px;
     padding: 7px 14px;
     border-radius: 100px;
     background-color: #95DCD8;
     border: 2px solid #000000;
+}
+
+#phone-shuffle{
+    display: none;
+}
+
+#phone-click-counter{
+    display: none;
 }
 
 /*--CARD SECTION--*/
@@ -227,6 +235,24 @@ footer{
     text-shadow: 2px 2px 2px #000000;
 }
 
+/*----------------------SHUFFLE BUTTON-----------------------*/
+.shuffle-box{
+    position: relative;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.shuffle-button-box{
+    width: 70%;
+    margin: 0 20%;
+    display:flex;
+    justify-content: center;
+}
+.shuffle-button{
+    margin-left: 10px;
+}
+
 button{
     position: relative;
     width: 150px;
@@ -237,21 +263,6 @@ button{
     border: 2px solid #000000;
     border-radius: 100px;
 }
-/*----------------------SHUFFLE BUTTON-----------------------*/
-#shuffle-box{
-    position: relative;
-    width: 20%
-}
-
-#shuffle-button-box{
-    width: 70%;
-    margin: 0 20%;
-    display:flex;
-}
-#shuffle-button{
-    margin-left: 10px;
-}
-
 /*------------------------------------------PHONE MEDIA QUERY-----------------------------------------*/
 @media only screen and (max-width: 1024px){
 
@@ -275,31 +286,53 @@ button{
     margin-bottom: 100px;
 }
 
-#click-box{
+.click-box{
     width: 100%;
     margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
 }
 
 #card-section{
     width: 100%;
     padding: 0;
     border: none;
+    margin-bottom: 20px;
 }
 
 #center-grid{
     max-width: 340px;
 }
-#shuffle-box{
+
+#win-screen,
+#loss-screen{
+    width: 100%;
+    padding: 0 0;
+    margin-bottom: 20px;
+}
+
+.result-box{
+    width: 80%;
+}
+
+.shuffle-box{
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#shuffle-button{
+.shuffle-button{
+    margin-bottom: 20px;
+}
+
+#phone-shuffle{
     display: flex;
-    justify-content: center;
+}
+
+#phone-click-counter{
+    display: flex;
+}
+
+#desktop-shuffle{
+    display: none;
 }
 }
 

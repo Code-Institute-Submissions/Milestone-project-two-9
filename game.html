@@ -21,11 +21,16 @@
 
     <!--GAME SECTION-->
     <div id="game-section">
-        <div id="click-box">
-            <div id="click-counter">
-                <h3 class="click-counter-text">Click Counter:<span id="clicker"></span></h3>
+        <div class="click-box">
+            <div class="click-counter">
+                <h3 class="click-counter-text">Click Counter:<span class="clicker"></span></h3>
             </div>
         </div> 
+        <div class="shuffle-box" id="phone-shuffle">
+            <div  class="shuffle-button-box">
+                <button class="shuffle-button" type="button" onclick="shuffle()">Shuffle</button>
+            </div>
+        </div>
         <!--CARD SECTION-->
         <div id="card-section">
             <div id="center-grid">
@@ -415,11 +420,16 @@
         </div>
             
         <!--END OF CARD SECTION-->
-        <div id="shuffle-box">
-            <div  id="shuffle-button-box">
-                <button id="shuffle-button" type="button" onclick="shuffle()">Shuffle</button>
+        <div class="shuffle-box" id="desktop-shuffle">
+            <div  class="shuffle-button-box">
+                <button class="shuffle-button" type="button" onclick="shuffle()">Shuffle</button>
             </div>
         </div>
+        <div class="click-box" id="phone-click-counter">
+            <div class="click-counter">
+                <h3 class="click-counter-text">Click Counter:<span class="clicker"></span></h3>
+            </div>
+        </div> 
     </div>
 
     <!--FOOTER-->

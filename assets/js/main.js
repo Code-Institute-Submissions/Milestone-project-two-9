@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const CARD_VALUE =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 const CARD_SUIT = ["hearts", "spades", "clubs", "diamonds"];
-let clickCounter = 100;
+let clickCounter = 70;
 const cards = document.querySelectorAll('.card-grid');
 let isCardFlipped = false;
 let boardLocked = false;
@@ -14,7 +14,7 @@ let winCondition = 0;
 function flipCard() { 
     if (boardLocked) return;
     clickCounter -= 1;
-    document.getElementById("clicker").innerHTML = clickCounter;
+    $("h3 span").text(`${clickCounter}`)
 
     if (this === firstFlip) return;
     $(this).children("div.card-back").hide();
@@ -84,9 +84,17 @@ function showLossScreen(){
 
 function playAgain(){
     $("#card-section").removeClass("animate__animated animate__zoomOutDown");
-    $("#win-screen").css("display", "none")
-    $("#loss-screen").css("display", "none")
-    $("#card-section").css("display", "");
+    $("#card-section").addClass("animate__animated animate__flipInX");
+    $("#loss-screen").addClass("animate__animated animate__flipOutX");
+    $("#win-screen").addClass("animate__animated animate__flipOutX");
+    setTimeout(() => {
+        $("#win-screen").css("display", "none")
+        $("#loss-screen").css("display", "none")
+        $("#loss-screen").removeClass("animate__animated animate__flipOutX");
+        $("#win-screen").removeClass("animate__animated animate__flipOutX");
+        $("#card-section").css("display", "");
+    },700);
+
     shuffle();
 }
 
@@ -122,9 +130,9 @@ function shuffle() {
     }
     $(".card-grid").children("div.card-back").show();
     cards.forEach(card => card.addEventListener('click', flipCard));
-    clickCounter = 100;
+    clickCounter = 70;
     winCondition = 0;
-    document.getElementById("clicker").innerHTML = clickCounter;
+    $("h3 span").text(`${clickCounter}`)
 };
 
 function showTutorialVideo(){
