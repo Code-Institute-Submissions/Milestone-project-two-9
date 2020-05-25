@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Patua+One:400, 500, 600, 700');
+@import url('https://fonts.googleapis.com/css?family=Patua+One:400, 500, 600, 700|Oleo+Script:400, 500, 600, 700');
 
 html{
   position:relative; 
@@ -80,6 +80,8 @@ h3{
 
 #tutorial-video{
     display: none;
+    width: 40%;
+    height: 200px;
     border: 2px solid #000000;
 }
 /*--FOOTER--*/
@@ -135,7 +137,13 @@ footer{
 /*--CARD SECTION--*/
 #card-section{
     width: 60%;
-    padding: 0 90px 0 90px;
+    padding: 0 50px 0 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#center-grid{
+    max-width: 675px;
 }
 .card-grid{
     display:inline-grid;
@@ -168,6 +176,7 @@ footer{
 .number-text{
     margin: 0 0;
     font-size: 200%;
+    font-family: 'Oleo Script', cursive;
 }
 
 .card-image{
@@ -197,7 +206,7 @@ footer{
 
 .result-box{
     width: 50%;
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     border-radius: 10px;
     padding: 10px 0;
     background-color: #6a65fd;
@@ -215,6 +224,7 @@ footer{
     font-size: 300%;
     margin: 20px 0;
     color: #eab029;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 button{
@@ -274,11 +284,13 @@ button{
 
 #card-section{
     width: 100%;
-    margin: 0 2% 20px;
     padding: 0;
     border: none;
 }
 
+#center-grid{
+    max-width: 340px;
+}
 #shuffle-box{
     width: 100%;
     display: flex;

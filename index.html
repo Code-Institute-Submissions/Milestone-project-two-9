@@ -34,10 +34,12 @@
     
     <!--TUTORIAL-->
     <div id="tutorial">
-        <div class="blue-box">
-            <h3 class="tutorial-text">View Tutorial</h3>
+        <div  id="hide-tutorial">
+            <div class="blue-box">
+                <h3 class="tutorial-text" onclick="showTutorialVideo()">View Tutorial</h3>
+            </div>
         </div>
-        <video id="tutorial-video" width="320" height="240" controls>
+        <video id="tutorial-video" controls>
             <source src="movie.mp4" type="video/mp4">
             <source src="movie.ogg" type="video/ogg">
             Your browser does not support the video tag.

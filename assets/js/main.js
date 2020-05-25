@@ -29,12 +29,12 @@ function flipCard() {
     secondFlip = this;
     checkForMatch();
 
-    if (winCondition === 14){
+    if (winCondition === 15){
         showWinScreen();
         return
     }
 
-    if (clickCounter == -1){
+    if (clickCounter == 0){
         showLossScreen();
         return
     }
@@ -126,3 +126,9 @@ function shuffle() {
     winCondition = 0;
     document.getElementById("clicker").innerHTML = clickCounter;
 };
+
+function showTutorialVideo(){
+    $("#hide-tutorial").css("display", "none");
+    $("#tutorial-video").css("display", "flex");
+
+}
