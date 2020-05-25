@@ -1,39 +1,137 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# **Card Catch**
 
-Welcome OGMyst,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## **Milestone project 2: Interactive Frontend Development - Code Institute**
 
-## Gitpod Reminders
+A memory card game in which players must find all the pairs before the click 
+counter reaches Zero
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## UX
 
-A blue button should appear to click: *Make Public*,
+### **Goals:**
+* To create simple game accessible to anyone 
 
-Another blue button should appear to click: *Open Browser*.
+* To have a a loss condition in order to encourage more engagement from players
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### **User Stories**
 
-A blue button should appear to click: *Make Public*,
+Coming Soon
 
-Another blue button should appear to click: *Open Browser*.
+### **Strategy**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+The aim was to create a very simple site that focused on the gameplay.
 
-## Updates Since The Instructional Video
+### **Scope**
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+Originally there were going to be a choice in difficulty from easy, medium and hard. 
+The aim was that this would appeal to a wider audience who could commit their time 
+and energy to a difficulty that suited them at any moment. Due to time the harder
+difficulties were ommited leaving the base game which is accessible to anyone.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### **Structure**
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The site has two pages. The landing page contains a button to take the user to the 
+game and  atutorial button which loads a video in the browser. The second page is 
+the game. This layout is based on the focus on gameplay and displaying only 
+information pertaining to that.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### **Skeleton**
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Using figma the following wireframes were made:
 
---------
+[Desktop](https://github.com/OGMyst/Milestone-project-two/blob/master/assets/mockups/MS2%20-%20Card%20Catch%20Desktop.pdf)
 
-Happy coding!
+[Phone](https://github.com/OGMyst/Milestone-project-two/blob/master/assets/mockups/MS2%20-%20Card%20Catch%20Phone.pdf)
+
+It was decided that it would streamline the site if the tutorial had a video rather than a playable tutorial level which
+would use pop ups to instruct the user. The site behind the pop ups in the mockups is the basis for the design site.
+
+### **Surface**
+
+The colours for the site were picked with the aim of relaxing the user and creating a low intensity enviroment. The 
+off-white background is less sharp than pure white. The sky blue is very subtle and doesn't jump out of the page.
+
+### **Technologies**
+
+    HTML - To create a basic site
+    CSS - To create a nice style and to stand-out
+    FontAwesome - For Card suit icons
+    Animate.css - To make interesting transtitions 
+    Figma - To create a wireframe
+
+
+## Features
+
+The landing page features an embedded video which is displayed when the tutorial button is clicked. The tutorial
+is supplemented by a A shuffle 
+button on the game page allows users  
+
+### Features Left to Impliment
+
+Should the site gain access to a database it would open the possibility to include in-depth
+champion information pages for all the champions in the game. On the main page this would mean 
+all eighty three champions would be present. To prevent the main champion section being very 
+long, the desciptions would be put inside a box which only appears when clicked on. The thirteen
+items and their combinations would be collapsed into dropdown boxes to maintain accessibility.
+
+
+## Testing
+
+All links work both within the site and to the external patch notes. All "Read More" links lead 
+to the same champion page. 
+
+The site is responsive over different screen sizes with custom layouts where appropriate. The site 
+has been tested on Mozilla Firefox, Google Chrome and safari and works as intended.The site was 
+tested on an android phone, Iphone, tablet, Ipad, laptop, Macbook and desktop. The colour styles 
+appear more vibrant on different screens but all site functions work as intended. 
+
+### **Bugs**
+
+#### **Champion Descriptions Layout**
+
+Issue with the champion descriptions displaying in a column instead of two per row. Mentor advised
+to change the elements from "li" to "div". An unnecessary "col" class was found which was interfering
+with the functionality of the bootstrap code.
+
+##### **Overlay**
+
+Overlay was not reaching the top of the the item background image. Issue found to be the margin of 
+the child element. Moved the margin to the child of that element.
+
+##### **Iphone and Ipad 
+
+Background images display as a zoomed in image for Ipad and Iphone. Unable to find fix after searching 
+stack overflow or after asking for help from other students and my mentor. Problem doesn't appear for Macbook.
+
+The following tests have been used to ensure proper site functionality:
+
+* GTmetrix: To test on website loading times
+* W3C HTML Validator: This validator checks the markup validity of Web documents in HTML.
+* W3C CSS Validator: This validator checks the markup validity of Web documents in CSS.
+
+
+## **Deployment**
+
+This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update 
+automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, 
+the landing page must be named index.html.
+
+To run locally, you can clone this repository directly into the editor of your choice by pasting the link into 
+your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
+
+## **Credits**
+
+### **Content**
+
+All content on this site were written by me.
+
+### **Media**
+
+All photos were taken from tftactics.gg and wallpapercave.com
+
+## **Acknowledgements**
+The Parallax Scrolling effect was found on w3schools.com link (by mentor advice)
+
+[tftactics.gg](https://tftactics.gg/item-builder) This site gave inspiration for
+the layout of the item section.
