@@ -95,15 +95,15 @@ function shuffle() {
     let orderedCards = [];
     let cardShuffling = [];
     let x;
-    while (orderedCards.length < 28){ 
+    while (orderedCards.length < 30){ 
         let j = Math.floor((Math.random()*13) + 0);
         let i = Math.floor((Math.random()*4) + 0);
         cardFinal = [CARD_VALUE[j], CARD_SUIT[i]] 
         orderedCards.push(cardFinal, cardFinal);  
     }
     //Creates an array of unordered numbers to be used as index numbers for orderedCards array
-    while (cardShuffling.length < 28){
-        let orderNumber = Math.floor((Math.random()*28) + 0);
+    while (cardShuffling.length < 30){
+        let orderNumber = Math.floor((Math.random()*30) + 0);
         let numberCheck = cardShuffling.includes(orderNumber);
         if(numberCheck === false){
             cardShuffling.push(orderNumber)
@@ -111,7 +111,7 @@ function shuffle() {
     }
     //inputs a value of a complete playing card to the HTML 
     
-    for (x = 0; x < 28; x++){
+    for (x = 0; x < 30; x++){
         let indexnumber = cardShuffling[x];
         let cardNumber = document.getElementsByClassName("number-text");
         let cardSuit = document.getElementsByClassName("card-suit");

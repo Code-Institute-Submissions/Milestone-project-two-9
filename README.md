@@ -64,8 +64,10 @@ off-white background is less sharp than pure white. The sky blue is very subtle 
 ## Features
 
 The landing page features an embedded video which is displayed when the tutorial button is clicked. The tutorial
-is supplemented by a A shuffle 
-button on the game page allows users  
+is supplemented by a info button on the game which summarises the rules should the player ever need to quickly
+check them. A shuffle button on the game page allows users to start a new round should they realise they are 
+going to lose their current one. The game features CSS animations which transition from the board to the results 
+screen upon winning or losing.
 
 ### Features Left to Impliment
 

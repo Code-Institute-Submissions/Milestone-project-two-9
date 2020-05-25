@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Patua+One:400, 500, 600, 700');
 
+html{
+  position:relative; 
+  min-height: 100%;
+}
+
 body{
     background-color: #FBFADD;
     font-family: 'Patua One', cursive;
+    margin: 0;
 }
 
 h3{
@@ -72,15 +78,20 @@ h3{
     justify-content: center;
 }
 
+#tutorial-video{
+    display: none;
+    border: 2px solid #000000;
+}
 /*--FOOTER--*/
 footer{
     display: flex;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    margin: 0 0;
     padding: 0 10px;
     background-color: #95DCD8;
+    position: absolute;
+    bottom: 0;
+    left: 0;  
 }
 
 .footer-icons{
@@ -101,6 +112,7 @@ footer{
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 45px;
 }
 
 #click-box{
