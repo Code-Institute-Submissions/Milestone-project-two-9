@@ -14,7 +14,7 @@ let winCondition = 0;
 function flipCard() { 
     if (boardLocked) return;
     clickCounter -= 1;
-    $("h3 span").text(`${clickCounter}`)
+    $("h3 span").text(`${clickCounter}`);
 
     if (this === firstFlip) return;
     $(this).children("div.card-back").hide();
@@ -31,12 +31,12 @@ function flipCard() {
 
     if (winCondition === 15){
         showWinScreen();
-        return
+        return;
     }
 
     if (clickCounter == 0){
         showLossScreen();
-        return
+        return;
     }
 }
 
@@ -78,7 +78,7 @@ function showLossScreen(){
     $("#card-section").addClass("animate__animated animate__zoomOutDown");
     setTimeout(() => {
         $("#card-section").css("display", "none");
-        $("#loss-screen").css("display", "flex")
+        $("#loss-screen").css("display", "flex");
     },700);
 }
 
@@ -88,8 +88,8 @@ function playAgain(){
     $("#loss-screen").addClass("animate__animated animate__flipOutX");
     $("#win-screen").addClass("animate__animated animate__flipOutX");
     setTimeout(() => {
-        $("#win-screen").css("display", "none")
-        $("#loss-screen").css("display", "none")
+        $("#win-screen").css("display", "none");
+        $("#loss-screen").css("display", "none");
         $("#loss-screen").removeClass("animate__animated animate__flipOutX");
         $("#win-screen").removeClass("animate__animated animate__flipOutX");
         $("#card-section").css("display", "");
@@ -106,7 +106,7 @@ function shuffle() {
     while (orderedCards.length < 30){ 
         let j = Math.floor((Math.random()*13) + 0);
         let i = Math.floor((Math.random()*4) + 0);
-        cardFinal = [CARD_VALUE[j], CARD_SUIT[i]] 
+        cardFinal = [CARD_VALUE[j], CARD_SUIT[i]];
         orderedCards.push(cardFinal, cardFinal);  
     }
     //Creates an array of unordered numbers to be used as index numbers for orderedCards array
@@ -114,7 +114,7 @@ function shuffle() {
         let orderNumber = Math.floor((Math.random()*30) + 0);
         let numberCheck = cardShuffling.includes(orderNumber);
         if(numberCheck === false){
-            cardShuffling.push(orderNumber)
+            cardShuffling.push(orderNumber);
         }
     }
     //inputs a value of a complete playing card to the HTML 
@@ -132,8 +132,8 @@ function shuffle() {
     cards.forEach(card => card.addEventListener('click', flipCard));
     clickCounter = 70;
     winCondition = 0;
-    $("h3 span").text(`${clickCounter}`)
-};
+    $("h3 span").text(`${clickCounter}`);
+}
 
 function showTutorialVideo(){
     $("#hide-tutorial").css("display", "none");
