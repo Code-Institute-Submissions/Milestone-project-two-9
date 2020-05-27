@@ -11,12 +11,15 @@ let boardLocked = false;
 let firstFlip, secondFlip;
 let winCondition = 0;
 
+/*  Checks if cards match, they stay face up if matched or get flipped face down if not.
+    Checks if all matching pairs have been flipped or if clickcounter has reached zero
+*/
 function flipCard() { 
-    if (boardLocked) return;
+    if (boardLocked) return; //Stops cards being flipped whilst currently flipped cards are being checked 
+
+    if (this === firstFlip) return;//When a card has been flipped this code won't run 
     clickCounter -= 1;
     $("h3 span").text(`${clickCounter}`);
-
-    if (this === firstFlip) return;
     $(this).children("div.card-back").hide();
     
     if (!isCardFlipped) {
@@ -27,7 +30,7 @@ function flipCard() {
     }   
     // second click
     secondFlip = this;
-    checkForMatch();
+    checkForMatch(); 
 
     if (winCondition === 15){
         showWinScreen();
@@ -40,17 +43,20 @@ function flipCard() {
     }
 }
 
+//dataset value is given during shuffle()
 function checkForMatch() {
   let isMatch = firstFlip.dataset.framework === secondFlip.dataset.framework;
   isMatch ? disableCards() : unflipCards();
 }
 
+//Can no longer interact with matched cards
 function disableCards() {
     firstFlip.removeEventListener('click', flipCard);
     secondFlip.removeEventListener('click', flipCard);
     winCondition += 1;
     resetBoard();
 }
+
 
 function unflipCards() {
   boardLocked = true;
@@ -99,7 +105,7 @@ function playAgain(){
 }
 
 function shuffle() {
-      //Creates a multidimensional array filled with a two of each combined value of cardValue and cardSuit
+      //Creates a multidimensional array filled with a two of each combined value of CARD_VALUE and CARD_SUIT
     let orderedCards = [];
     let cardShuffling = [];
     let x;
@@ -118,7 +124,6 @@ function shuffle() {
         }
     }
     //inputs a value of a complete playing card to the HTML 
-    
     for (x = 0; x < 30; x++){
         let indexnumber = cardShuffling[x];
         let cardNumber = document.getElementsByClassName("number-text");
@@ -128,6 +133,7 @@ function shuffle() {
         cardNumber[x].innerHTML = `${orderedCards[indexnumber][0]}`;
         cardData[x].setAttribute("data-framework", orderedCards[indexnumber][0]+orderedCards[indexnumber][1]);       
     }
+    //Resets the entire board for a new round 
     $(".card-grid").children("div.card-back").show();
     cards.forEach(card => card.addEventListener('click', flipCard));
     clickCounter = 70;

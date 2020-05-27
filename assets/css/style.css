@@ -49,7 +49,7 @@ h3{
     text-shadow: 2px 2px 2px #000000;
 }
 
-/*--INTRO--*/
+/*---------------------------------INTRO-------------------------------*/
 #intro{
     width: 100%;
     text-align: center;
@@ -60,7 +60,7 @@ h3{
     
 }
 
-/*--LEVEL SELECT--*/
+/*-----------------------------LEVEL SELECT----------------------------*/
 #level-select{
     margin-top: 60px;
     display: flex;
@@ -71,7 +71,7 @@ h3{
     text-decoration: none;
 }
 
-/*--TUTORIAL--*/
+/*-------------------------------TUTORIAL-----------------------------*/
 #tutorial{
     margin-top: 40px;
     display: flex;
@@ -84,7 +84,7 @@ h3{
     border: 2px solid #000000;
 }
 
-/*--FOOTER--*/
+/*--------------------------------FOOTER------------------------------*/
 footer{
     display: flex;
     width: 100%;
@@ -109,7 +109,7 @@ footer{
 
 /*------------------------------------------PLAY.HTML-----------------------------------------*/
 
-/*--LEFT-HAND SIDE--*/
+/*-------------------------------LEFT-HAND SIDE----------------------------*/
 #game-section{
     width: 100%;
     display: flex;
@@ -145,7 +145,7 @@ footer{
     display: none;
 }
 
-/*-------------------------CARD SECTION-----------------------*/
+/*------------------------------------CARD SECTION-----------------------------*/
 #card-section{
     width: 60%;
     padding: 0 50px 0 50px;
@@ -206,7 +206,7 @@ footer{
     text-shadow: 1px 1px 1px #000000;
     margin: 0 0;
 }
-/*----------------------WIN/LOSS SCREEN-----------------------*/
+/*---------------------------------WIN/LOSS SCREEN-----------------------------*/
 #win-screen,
 #loss-screen{
     display: none;
@@ -238,7 +238,7 @@ footer{
     text-shadow: 2px 2px 2px #000000;
 }
 
-/*----------------------SHUFFLE BUTTON-----------------------*/
+/*-------------------------------SHUFFLE BUTTON-------------------------------*/
 #right-hand-side{
     width: 20%;
 }
