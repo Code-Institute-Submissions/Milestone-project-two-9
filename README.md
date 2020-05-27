@@ -6,7 +6,7 @@
 A memory card game in which players must find all the pairs before the click 
 counter reaches Zero
 
-##Demo 
+## Demo 
 
 A live Demo version can be found [here](https://ogmyst.github.io/Milestone-project-two/)
 
