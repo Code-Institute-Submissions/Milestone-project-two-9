@@ -8,7 +8,7 @@ counter reaches Zero
 
 ##Demo 
 
-A live Demo version can be found [here] (https://ogmyst.github.io/Milestone-project-two/)
+A live Demo version can be found [here](https://ogmyst.github.io/Milestone-project-two/)
 
 
 ## UX
