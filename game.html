@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!--HEADER-->
+    <!----------------------------------HEADER------------------------------------->
     <div class="header">
         <div class="header-box">
             <a href="index.html" class="header-link">
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <!--GAME SECTION-->
+    <!--------------------------------GAME SECTION--------------------------------->
     <div id="game-section">
         <div class="click-box">
             <div class="click-counter">
@@ -31,7 +31,7 @@
                 <button class="shuffle-button" type="button" onclick="shuffle()">Shuffle</button>
             </div>
         </div>
-        <!--CARD SECTION-->
+        <!----------------------------CARD SECTION--------------------------------->
         <div id="card-section">
             <div id="center-grid">
                 <div class="card-grid"> <!--NO.1-->
@@ -407,7 +407,7 @@
                 </div>
             </div>
         </div>
-        <!--------------------------------LOSS SCREEN------------------------------->
+        <!--------------------------------LOSS SCREEN------------------------------>
         <div id="loss-screen">
             <div class="result-box animate__animated animate__slideInDown animate_slower">
                 <div class="result-text-box">
@@ -419,20 +419,41 @@
             </div>
         </div>
             
-        <!--END OF CARD SECTION-->
-        <div class="shuffle-box" id="desktop-shuffle">
-            <div  class="shuffle-button-box">
-                <button class="shuffle-button" type="button" onclick="shuffle()">Shuffle</button>
+        <!---------------------------RIGHT HAND SIDE------------------------------>
+        <div id="right-hand-side">
+            <div class="info-shuffle-box" id="desktop-shuffle">
+                <div class="info-box">
+                    <div class="info-button" onclick="toggleInfo()">
+                        <i class="fas fa-info"></i>
+                    </div>
+                </div>
+                <div  class="shuffle-button-box">
+                    <button class="shuffle-button" type="button" onclick="shuffle()">Shuffle</button>
+                </div>
             </div>
-        </div>
-        <div class="click-box" id="phone-click-counter">
-            <div class="click-counter">
-                <h3 class="click-counter-text">Click Counter:<span class="clicker"></span></h3>
+            <div id="phone-info-click">
+                <div class="info-box">
+                        <div class="info-button" onclick="toggleInfo()">
+                        <i class="fas fa-info"></i>
+                    </div>
+                </div>
+                <div id = "phone-click-counter">
+                    <div class="click-counter">
+                        <h3 class="click-counter-text">Click Counter:<span class="clicker"></span></h3>
+                    </div>
+                </div>
+            </div>
+            <div id="tutorial-info-shell">
+                <div id="tutorial-info-box">
+                    <p>Find all the pairs</p>
+                    <p>Complete the board before the click counter reaches zero</p>
+                    <p>Click the shuffle button to start a new round</p>
+                </div>
             </div>
         </div> 
     </div>
 
-    <!--FOOTER-->
+    <!-----------------------------------FOOTER---------------------------------->
     <footer>
         <div class="footer-text">
             <p>Interested in seeing more?<span class="footer-span"> Come check out my other work and 
@@ -446,7 +467,7 @@
         </div>
     </footer>
 
-    <!--SCRIPTS-->
+    <!-----------------------------------SCRIPTS--------------------------------->
     <script type="text/javascript" src="assets/js/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/318689fbdb.js"></script>
     <script src="assets/js/main.js"></script>

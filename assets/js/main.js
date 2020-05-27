@@ -140,3 +140,7 @@ function showTutorialVideo(){
     $("#tutorial-video").css("display", "flex");
 
 }
+
+function toggleInfo(){
+    $("#tutorial-info-box").slideToggle();
+}
