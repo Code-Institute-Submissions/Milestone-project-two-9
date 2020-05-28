@@ -7,7 +7,7 @@ const CARD_SUIT = ["hearts", "spades", "clubs", "diamonds"];
 let clickCounter = 70;
 const cards = document.querySelectorAll('.card-grid');
 let isCardFlipped = false;
-let boardLocked = false;
+let isBoardLocked = false;
 let firstFlip, secondFlip;
 let winCondition = 0;
 
@@ -15,11 +15,10 @@ let winCondition = 0;
     Checks if all matching pairs have been flipped or if clickcounter has reached zero
 */
 function flipCard() { 
-    if (boardLocked) return; //Stops cards being flipped whilst currently flipped cards are being checked 
+    if (isBoardLocked) return; //Stops cards being flipped whilst currently flipped cards are being checked 
 
     if (this === firstFlip) return;//When a card has been flipped this code won't run 
-    clickCounter -= 1;
-    $("h3 span").text(`${clickCounter}`);
+    decreaseClickCounter();
     $(this).children("div.card-back").hide();
     
     if (!isCardFlipped) {
@@ -43,8 +42,13 @@ function flipCard() {
     }
 }
 
-//dataset value is given during shuffle()
+function decreaseClickCounter(){
+    clickCounter -= 1;
+    $("h3 span").text(`${clickCounter}`);
+}
+
 function checkForMatch() {
+//dataset value is given during shuffle()
   let isMatch = firstFlip.dataset.framework === secondFlip.dataset.framework;
   isMatch ? disableCards() : unflipCards();
 }
@@ -57,9 +61,8 @@ function disableCards() {
     resetBoard();
 }
 
-
 function unflipCards() {
-  boardLocked = true;
+  isBoardLocked = true;
     setTimeout(() => {
         $(firstFlip).children("div.card-back").show();
         $(secondFlip).children("div.card-back").show();
@@ -68,15 +71,15 @@ function unflipCards() {
 }
 
 function resetBoard() {
-  [isCardFlipped, boardLocked] = [false, false];
+  [isCardFlipped, isBoardLocked] = [false, false];
   [firstFlip, secondFlip] = [null, null];
 }
 
 function showWinScreen(){ 
     $("#card-section").addClass("animate__animated animate__zoomOutDown");
     setTimeout(() => {
-    $("#card-section").css("display", "none");
-    $("#win-screen").css("display", "flex");
+        $("#card-section").css("display", "none");
+        $("#win-screen").css("display", "flex");
     },700);
 }
 
@@ -140,8 +143,6 @@ function shuffle() {
     winCondition = 0;
     $("h3 span").text(`${clickCounter}`);
 }
-
-
 
 function toggleInfo(){
     $("#tutorial-info-box").slideToggle();
