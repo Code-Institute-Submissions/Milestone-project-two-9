@@ -68,7 +68,7 @@ off-white background is less sharp than pure white. The sky blue is very subtle 
 
 ### **JavaScript Libraries**
 
-    Jquery - To toggle classes and display
+- Jquery - To toggle classes and display
 
 
 ## Features

@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const CARD_VALUE =  ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 const CARD_SUIT = ["hearts", "spades", "clubs", "diamonds"];
-let clickCounter = 70;
 const cards = document.querySelectorAll('.card-grid');
+const TOTAL_CARDS = 30;
+let clickCounter = 70;
 let isCardFlipped = false;
 let isBoardLocked = false;
 let firstFlip, secondFlip;
@@ -112,14 +113,14 @@ function shuffle() {
     let orderedCards = [];
     let cardShuffling = [];
     let x;
-    while (orderedCards.length < 30){ 
+    while (orderedCards.length < TOTAL_CARDS){ 
         let j = Math.floor((Math.random()*13) + 0);
         let i = Math.floor((Math.random()*4) + 0);
         cardFinal = [CARD_VALUE[j], CARD_SUIT[i]];
         orderedCards.push(cardFinal, cardFinal);  
     }
     //Creates an array of unordered numbers to be used as index numbers for orderedCards array
-    while (cardShuffling.length < 30){
+    while (cardShuffling.length < TOTAL_CARDS){
         let orderNumber = Math.floor((Math.random()*30) + 0);
         let numberCheck = cardShuffling.includes(orderNumber);
         if(numberCheck === false){
@@ -127,7 +128,7 @@ function shuffle() {
         }
     }
     //inputs a value of a complete playing card to the HTML 
-    for (x = 0; x < 30; x++){
+    for (x = 0; x < TOTAL_CARDS; x++){
         let indexnumber = cardShuffling[x];
         let cardNumber = document.getElementsByClassName("number-text");
         let cardSuit = document.getElementsByClassName("card-suit");
