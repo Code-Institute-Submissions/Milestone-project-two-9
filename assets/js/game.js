@@ -32,12 +32,12 @@ function flipCard() {
     secondFlip = this;
     checkForMatch(); 
 
-    if (winCondition === 15){
+    if (parseInt(winCondition) === 15){
         showWinScreen();
         return;
     }
 
-    if (clickCounter == 0){
+    if (parseInt(clickCounter) === 0){
         showLossScreen();
         return;
     }
@@ -76,7 +76,7 @@ function showWinScreen(){
     $("#card-section").addClass("animate__animated animate__zoomOutDown");
     setTimeout(() => {
     $("#card-section").css("display", "none");
-    $("#win-screen").css("display", "flex")
+    $("#win-screen").css("display", "flex");
     },700);
 }
 
@@ -141,11 +141,7 @@ function shuffle() {
     $("h3 span").text(`${clickCounter}`);
 }
 
-function showTutorialVideo(){
-    $("#hide-tutorial").css("display", "none");
-    $("#tutorial-video").css("display", "flex");
 
-}
 
 function toggleInfo(){
     $("#tutorial-info-box").slideToggle();

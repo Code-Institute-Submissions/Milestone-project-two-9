@@ -59,12 +59,12 @@ off-white background is less sharp than pure white. The sky blue is very subtle 
 
 ### **Technologies**
 
-    HTML - To create a basic site
-    CSS - To create a nice style and to stand-out
-    JavaScript - The engine to create user interaction
-    FontAwesome - For Card suit icons
-    Animate.css - To make interesting transtitions 
-    Figma - To create a wireframe
+- HTML - To create a basic site
+- CSS - To create a nice style and to stand-out
+- JavaScript - The engine to create user interaction
+- FontAwesome - For Card suit icons
+- Animate.css - To make interesting transtitions 
+- Figma - To create a wireframe
 
 ### **JavaScript Libraries**
 
