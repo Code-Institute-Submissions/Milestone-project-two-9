@@ -338,12 +338,9 @@ button{
         transform: scale(10);
     }
 }
-/*------------------------------------------PHONE MEDIA QUERY-----------------------------------------*/
+/*-----------------------------------------TABLET MEDIA QUERY-----------------------------------------*/
 @media only screen and (max-width: 1024px){
 
-#tutorial-video{
-    height: 170px;
-}
 .footer-text{
     margin-right: 5px;
 }
@@ -377,7 +374,7 @@ button{
 }
 
 #center-grid{
-    max-width: 340px;
+    max-width: 680px;
 }
 
 #win-screen,
@@ -413,7 +410,7 @@ button{
 }
 
 #phone-click-counter{
-    width: 70%;
+    display: none;
 }
 
 #desktop-shuffle{
@@ -425,6 +422,17 @@ button{
 }
 
 #tutorial-info-box{
+    width: 70%;
+}
+}
+/*------------------------------------------PHONE MEDIA QUERY-----------------------------------------*/
+@media only screen and (max-width: 767px){
+
+#tutorial-video{
+    height: 170px;
+}
+#phone-click-counter{
+    display: flex;
     width: 70%;
 }
 }
