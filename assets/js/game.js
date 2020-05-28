@@ -12,8 +12,9 @@ let isBoardLocked = false;
 let firstFlip, secondFlip;
 let winCondition = 0;
 
-/*  Checks if cards match, they stay face up if matched or get flipped face down if not.
-    Checks if all matching pairs have been flipped or if clickcounter has reached zero
+/*  
+Checks if cards match, they stay face up if matched or get flipped face down if not.
+Checks if all matching pairs have been flipped or if clickcounter has reached zero
 */
 function flipCard() { 
     if (isBoardLocked) return; //Stops cards being flipped whilst currently flipped cards are being checked 
