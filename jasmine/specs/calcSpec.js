@@ -57,6 +57,15 @@ describe("shuffle() part two", function(){
     it ("should have the same value", function(){
         expect (orderedCards[0]).toEqual(orderedCards[1])
     });
+
+    /*
+    The sum of numbers 0-29 is 435. This test is to show 
+    that all numbers being added to the cardShuffling 
+    array are not duplicated. This is not a definitive
+    test as there are many combinations which include
+    duplicates who's sum is 435 however repeating this 
+    test reduces the chance that this is the case.
+    */
     it ("should return the sum of 0-29", function(){
         expect (cardShufflingSumTotal).toBe(435);
     });
