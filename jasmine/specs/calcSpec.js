@@ -68,7 +68,5 @@ describe("shuffle() part two", function(){
     */
     it ("should return the sum of 0-29", function(){
         expect (cardShufflingSumTotal).toBe(435);
-    });
-    
-    
+    });   
 });
