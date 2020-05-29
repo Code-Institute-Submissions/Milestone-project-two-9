@@ -435,5 +435,9 @@ button{
     display: flex;
     width: 70%;
 }
+
+#center-grid{
+    max-width: 340px;
+}
 }
 
