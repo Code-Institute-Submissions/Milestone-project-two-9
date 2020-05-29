@@ -7,10 +7,6 @@ let isBoardLocked = false;
 let firstFlip, secondFlip;
 let winCondition = 0;
 
-function spareCards(indexnum){
-    return indexnum;
-}
-
 function shuffle() {
       //Creates a multidimensional array filled with a two of each combined value of CARD_VALUE and CARD_SUIT
     let orderedCards = [];
